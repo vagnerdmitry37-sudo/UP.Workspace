@@ -1,1 +1,9 @@
-<p-button label="Check" />
+<p-button
+  label="Check"
+  severity="contrast"
+  (mousedown)="startHold()"
+  (mouseup)="endHold()"
+  (mouseleave)="endHold()"
+  (touchstart)="startHold()"
+  (touchend)="endHold()"
+/>

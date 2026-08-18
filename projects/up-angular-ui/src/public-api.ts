@@ -1,6 +1,2 @@
-/*
- * Public API Surface of up-angular-ui
- */
-
-export * from './lib/up-angular-ui';
+export * from './lib/tools/index';
 export * from './lib/components/index';

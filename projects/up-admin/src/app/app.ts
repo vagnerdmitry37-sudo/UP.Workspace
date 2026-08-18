@@ -1,12 +1,26 @@
-import { Component, signal } from '@angular/core';
-import { UpAngularUi, UpButton } from '@up-angular-ui/core';
+import { Component, inject, signal } from '@angular/core';
+import { UpButton, UpThemeService } from '@up-angular-ui/core';
 
 @Component({
   selector: 'app-root',
-  imports: [UpAngularUi, UpButton],
+  imports: [UpButton],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
 export class App {
   protected readonly title = signal('up-admin');
+
+  uts = inject(UpThemeService);
+
+  held() {
+    console.log('🚀 ~ App ~ held');
+  }
+
+  clicked() {
+    console.log('🚀 ~ App ~ clicked');
+  }
+
+  holding() {
+    console.log('🚀 ~ App ~ holding');
+  }
 }
