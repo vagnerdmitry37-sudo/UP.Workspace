@@ -1,9 +1,9 @@
 import { Component, signal } from '@angular/core';
-import { UpAngularUi } from '@up-angular-ui/core';
+import { UpAngularUi, UpButton } from '@up-angular-ui/core';
 
 @Component({
   selector: 'app-root',
-  imports: [UpAngularUi],
+  imports: [UpAngularUi, UpButton],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
