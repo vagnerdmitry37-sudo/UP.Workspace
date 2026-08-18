@@ -14,7 +14,7 @@
     "target": "ES2022",
     "module": "preserve",
     "paths": {
-      "up-angular-ui": ["./dist/up-angular-ui"]
+      "@up-angular-ui/core": ["./dist/up-angular-ui"]
     }
   },
   "angularCompilerOptions": {
