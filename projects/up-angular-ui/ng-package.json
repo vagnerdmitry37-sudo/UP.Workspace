@@ -3,5 +3,12 @@
   "dest": "../../dist/up-angular-ui",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "assets": [
+    {
+      "input": "src/lib/assets",
+      "glob": "**/*",
+      "output": "assets"
+    }
+  ]
 }
