@@ -1,9 +1,12 @@
 {
   "name": "@up-angular-ui/core",
-  "version": "0.0.1",
+  "version": "0.0.10",
   "peerDependencies": {
     "@angular/common": "^22.1.0",
-    "@angular/core": "^22.1.0"
+    "@angular/core": "^22.1.0",
+    "@openng/optimus-ui": "^2.0.0",
+    "@openng/optimus-ui-themes": "^2.0.0",
+    "@openng/icons": "^1.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"

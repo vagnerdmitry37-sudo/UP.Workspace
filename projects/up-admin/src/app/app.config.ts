@@ -4,7 +4,14 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 
 import { provideUpAngularUI } from '@up-angular-ui/core';
+import { provideOptimus } from '@openng/optimus-ui/config';
+import Aura from '@openng/optimus-ui-themes/aura';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideUpAngularUI(), provideBrowserGlobalErrorListeners(), provideRouter(routes)],
+  providers: [
+    provideUpAngularUI(),
+    provideBrowserGlobalErrorListeners(),
+    provideRouter(routes),
+    provideOptimus({ theme: { preset: Aura } }),
+  ],
 };
