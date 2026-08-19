@@ -41,6 +41,14 @@ module.exports = defineConfig([
   {
     files: ['projects/up-angular-ui/**/*.ts'],
     rules: {
+      '@angular-eslint/directive-selector': [
+        'error',
+        {
+          type: 'attribute',
+          prefix: 'up',
+          style: 'camelCase',
+        },
+      ],
       '@angular-eslint/component-selector': [
         'error',
         {

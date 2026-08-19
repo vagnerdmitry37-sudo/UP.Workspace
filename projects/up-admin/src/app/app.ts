@@ -1,9 +1,9 @@
 import { Component, inject, signal } from '@angular/core';
-import { UpButton, UpThemeService } from '@up-angular-ui/core';
+import { UpButton, UpHoldDirective, UpThemeService } from '@up-angular-ui/core';
 
 @Component({
   selector: 'app-root',
-  imports: [UpButton],
+  imports: [UpButton, UpHoldDirective],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
