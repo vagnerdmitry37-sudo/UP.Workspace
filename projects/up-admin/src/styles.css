@@ -1,2 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
-@import '@openng/icons/openng-icons.css';
+@import '../../../dist/up-angular-ui/assets/styles.css';
+
+body {
+  margin: 0;
+}

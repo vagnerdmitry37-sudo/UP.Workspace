@@ -1,26 +1,17 @@
-import { Component, inject, signal } from '@angular/core';
-import { UpButton, UpHoldDirective, UpThemeService } from '@up-angular-ui/core';
+import { Component, inject } from '@angular/core';
+import { UpButton, UpThemeService } from '@up-angular-ui/core';
+import { Footer, Layout } from './components';
 
 @Component({
   selector: 'app-root',
-  imports: [UpButton, UpHoldDirective],
+  imports: [UpButton, Layout, Footer],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
 export class App {
-  protected readonly title = signal('up-admin');
-
   uts = inject(UpThemeService);
 
-  held() {
-    console.log('🚀 ~ App ~ held');
-  }
-
-  clicked() {
-    console.log('🚀 ~ App ~ clicked');
-  }
-
-  holding() {
-    console.log('🚀 ~ App ~ holding');
+  onClick() {
+    this.uts.toggle();
   }
 }

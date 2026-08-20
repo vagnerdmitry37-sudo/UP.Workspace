@@ -1,1 +1,9 @@
 @import '@openng/icons/openng-icons.css';
+
+:root {
+  /* colors */
+  --up-border-color: var(--p-surface-200);
+
+  /* sizes */
+  --up-padding-normal: 0.5rem;
+}
