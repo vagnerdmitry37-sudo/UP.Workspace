@@ -1,0 +1,7 @@
+<!-- <p-menu #menu [model]="items" [popup]="true" styleClass="menu" />
+
+<up-icon-button class="manager-button" icon="pi-th-large" (click)="menu.toggle($event)" /> -->
+
+<up-menu #menu [items]="items" styleClass="manager-button">
+  <up-icon-button class="manager-button" icon="pi-th-large" (click)="menu.toggle($event)" />
+</up-menu>

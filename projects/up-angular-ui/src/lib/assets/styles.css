@@ -5,5 +5,6 @@
   --up-border-color: var(--p-surface-200);
 
   /* sizes */
+  --up-padding-large: 1.25rem;
   --up-padding-normal: 0.5rem;
 }
