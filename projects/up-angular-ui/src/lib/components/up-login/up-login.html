@@ -1,28 +1,34 @@
-<p-card header="Login">
-  <form class="container">
-    <p-iconfield>
-      <p-inputicon class="pi pi-user" />
-      <input
-        type="email"
-        pInputText
-        placeholder="Email"
-        [fluid]="true"
-        [formControl]="email()"
-        autocomplete="username"
-      />
-    </p-iconfield>
+<div class="login">
+  <p-card [header]="title()" class="card">
+    <ng-template #content>
+      <form class="form">
+        <p-iconfield>
+          <p-inputicon class="pi pi-user" />
+          <input
+            type="email"
+            pInputText
+            placeholder="Email"
+            [fluid]="true"
+            [formControl]="email()"
+            autocomplete="username"
+          />
+        </p-iconfield>
 
-    <p-iconfield>
-      <p-inputicon class="pi pi-lock" />
-      <p-password
-        [feedback]="false"
-        placeholder="Password"
-        [fluid]="true"
-        [formControl]="password()"
-        autocomplete="current-password"
-      />
-    </p-iconfield>
+        <p-iconfield>
+          <p-inputicon class="pi pi-lock" />
+          <p-password
+            [feedback]="false"
+            placeholder="Password"
+            [fluid]="true"
+            [formControl]="password()"
+            autocomplete="current-password"
+          />
+        </p-iconfield>
+      </form>
+    </ng-template>
 
-    <up-button label="Submit" type="submit" [disabled]="buttonDisabled()" (click)="onClick()" />
-  </form>
-</p-card>
+    <ng-template #footer>
+      <up-button label="Login" type="submit" [disabled]="buttonDisabled()" (click)="onClick()" />
+    </ng-template>
+  </p-card>
+</div>

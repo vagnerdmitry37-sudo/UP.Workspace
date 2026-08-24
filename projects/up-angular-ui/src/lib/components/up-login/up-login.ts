@@ -14,6 +14,7 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './up-login.css',
 })
 export class UpLogin {
+  title = input('');
   email = input.required<FormControl>();
   password = input.required<FormControl>();
   buttonDisabled = input(false);
