@@ -1,0 +1,28 @@
+<p-card header="Login">
+  <form class="container">
+    <p-iconfield>
+      <p-inputicon class="pi pi-user" />
+      <input
+        type="email"
+        pInputText
+        placeholder="Email"
+        [fluid]="true"
+        [formControl]="email()"
+        autocomplete="username"
+      />
+    </p-iconfield>
+
+    <p-iconfield>
+      <p-inputicon class="pi pi-lock" />
+      <p-password
+        [feedback]="false"
+        placeholder="Password"
+        [fluid]="true"
+        [formControl]="password()"
+        autocomplete="current-password"
+      />
+    </p-iconfield>
+
+    <up-button label="Submit" type="submit" [disabled]="buttonDisabled()" (click)="onClick()" />
+  </form>
+</p-card>

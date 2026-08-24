@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { UpIconButton } from '@up-angular-ui/core';
 
 @Component({
   selector: 'app-footer',
-  imports: [UpIconButton],
+  imports: [],
   templateUrl: './footer.html',
   styleUrl: './footer.css',
 })

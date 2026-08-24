@@ -1,11 +1,15 @@
-<up-button class="themeToggle" (click)="onClick()" />
-<app-layout>
-  <body>
-    <div class="test-content"></div>
-  </body>
-  <footer>
-    <app-footer>
-      <app-manager />
-    </app-footer>
-  </footer>
-</app-layout>
+@if (isLogedin) {
+  <up-button label="theme" class="themeToggle" (click)="onClick()" />
+  <app-layout>
+    <body>
+      <div class="test-content"></div>
+    </body>
+    <footer>
+      <app-footer>
+        <app-manager />
+      </app-footer>
+    </footer>
+  </app-layout>
+} @else {
+  <app-login />
+}
