@@ -18,8 +18,6 @@ export class Login {
   });
 
   protected submited() {
-    this.fs.post('auth/login', this.from.value).subscribe((a) => {
-      console.log('🚀 ~ Login ~ submited ~ a:', a);
-    });
+    this.fs.post('auth/login', this.from.value).subscribe();
   }
 }
