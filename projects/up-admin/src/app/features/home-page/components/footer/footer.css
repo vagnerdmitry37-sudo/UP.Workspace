@@ -2,5 +2,5 @@
   display: flex;
   justify-content: flex-end;
   border-top: solid 1px var(--up-border-color);
-  padding: var(--up-padding-normal);
+  padding: var(--up-spacing-normal);
 }

@@ -9,10 +9,10 @@ export class FetchService {
   private base = 'https://localhost:7139/api/';
 
   get(url: string) {
-    return this.http.get(url);
+    return this.http.get(`${this.base}${url}`, { withCredentials: true });
   }
 
-  post<TRespose>(url: string, body: unknown) {
-    return this.http.post<TRespose>(`${this.base}${url}`, body);
+  post<TRespose>(url: string, body?: unknown) {
+    return this.http.post<TRespose>(`${this.base}${url}`, body, { withCredentials: true });
   }
 }
