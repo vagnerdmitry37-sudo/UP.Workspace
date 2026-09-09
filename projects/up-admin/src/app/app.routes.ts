@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
 import { AuthPage, homePageGuard, loginPageGuard } from './features/auth';
 import { PAGE_TITLES } from './constants';
-import { HomePage } from './features/home-page';
 import { UsersPage } from './features/users-page';
 import { TransfersPage } from './features/transfers-page';
+import { Home } from './features/home';
 
 export const routes: Routes = [
   {
@@ -13,7 +13,7 @@ export const routes: Routes = [
   },
   {
     path: PAGE_TITLES.HOME,
-    component: HomePage,
+    component: Home,
     canActivate: [homePageGuard],
     children: [
       {
