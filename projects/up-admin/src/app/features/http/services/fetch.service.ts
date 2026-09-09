@@ -6,7 +6,7 @@ import { inject, Injectable } from '@angular/core';
 })
 export class FetchService {
   private http = inject(HttpClient);
-  private base = 'https://localhost:7139/api/';
+  private base = 'http://localhost:5142/api/';
 
   get(url: string) {
     return this.http.get(`${this.base}${url}`, { withCredentials: true });

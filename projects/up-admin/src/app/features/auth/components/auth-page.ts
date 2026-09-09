@@ -1,9 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { UpLogin } from '@up-angular-ui/core';
-import { FetchService } from '../../../services';
 import { AuthService } from '..';
 import { Router } from '@angular/router';
+import { FetchService } from '../../http';
 
 @Component({
   selector: 'app-auth-page',

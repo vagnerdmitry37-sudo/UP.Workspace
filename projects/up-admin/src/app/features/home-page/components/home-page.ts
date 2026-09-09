@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Layout } from './layout/layout';
 import { Footer } from './footer/footer';
 import { Manager } from './manager/manager';
+import { FetchService } from '../../http';
 
 @Component({
   selector: 'app-home-page',
@@ -10,4 +11,10 @@ import { Manager } from './manager/manager';
   templateUrl: './home-page.html',
   styleUrl: './home-page.css',
 })
-export class HomePage {}
+export class HomePage {
+  fs = inject(FetchService);
+
+  onLogout() {
+    this.fs.post('auth/logout').subscribe();
+  }
+}

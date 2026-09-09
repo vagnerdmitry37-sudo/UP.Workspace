@@ -1,6 +1,6 @@
 import { inject, Injectable, signal } from '@angular/core';
-import { FetchService } from '../../../services';
 import { catchError, map, of } from 'rxjs';
+import { FetchService } from '../../http';
 
 @Injectable({
   providedIn: 'root',
