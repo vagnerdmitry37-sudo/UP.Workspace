@@ -1,7 +1,5 @@
 import { Routes } from '@angular/router';
 import { Auth, loginGuard } from '../../auth';
-import { UsersPage } from '../../users-page';
-import { TransfersPage } from '../../transfers-page';
 import { Home, homeGuard } from '../../home';
 import { PATHS } from '../constants/paths';
 
@@ -18,11 +16,9 @@ export const routes: Routes = [
     children: [
       {
         path: PATHS.USERS,
-        component: UsersPage,
       },
       {
         path: PATHS.TRANSFERS,
-        component: TransfersPage,
       },
     ],
   },
