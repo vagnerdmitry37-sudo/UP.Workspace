@@ -8,10 +8,10 @@ class AppErrorHandler implements ErrorHandler {
   handleError(value: unknown): void {
     if (value instanceof HttpErrorResponse) {
       if (this.hasMessageProp(value.error)) {
-        this.uis.showError(value.error.message);
+        this.showError(value, value.message);
       }
     } else if (this.hasMessageProp(value)) {
-      this.uis.showError(value.message);
+      this.showError(value, value.message);
     }
   }
 
@@ -22,6 +22,11 @@ class AppErrorHandler implements ErrorHandler {
       'message' in value &&
       typeof value.message === 'string'
     );
+  }
+
+  private showError(error: unknown, message: string) {
+    console.error(error);
+    this.uis.showError(message);
   }
 }
 

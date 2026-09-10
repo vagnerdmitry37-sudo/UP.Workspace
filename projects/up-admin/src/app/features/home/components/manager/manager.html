@@ -1,3 +1,10 @@
-<up-menu #menu [items]="items" styleClass="manager-button">
-  <up-icon-button upHold class="manager-button" icon="pi-th-large" (clicked)="menu.toggle()" />
-</up-menu>
+<up-menu #settingsMenu [items]="settingsItems" styleClass="manager-button" />
+<up-menu #collectionsMenu [items]="collectionsItems" styleClass="manager-button" />
+
+<up-icon-button
+  upHold
+  class="manager-button"
+  icon="pi-th-large"
+  (held)="onHeld($event)"
+  (clicked)="onClicked($event)"
+/>

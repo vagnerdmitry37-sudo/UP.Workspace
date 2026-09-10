@@ -1,1 +1,1 @@
-export * from './up-hold';
+export * from './up-hold.directive';

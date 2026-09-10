@@ -6,7 +6,7 @@ import { FetchService } from '../../../http';
 import { Footer } from '../footer/footer';
 
 @Component({
-  selector: 'app-home-page',
+  selector: 'app-home',
   imports: [Layout, Footer, Manager, RouterOutlet],
   templateUrl: './home.html',
   styleUrl: './home.css',

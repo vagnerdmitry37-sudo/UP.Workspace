@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { UpHoldDirective, UpIconButton, UpMenu } from '@up-angular-ui/core';
+import { Component, viewChild } from '@angular/core';
+import { UpHoldDirective, UpIconButton, UpMenu, UpMenuItem } from '@up-angular-ui/core';
 
 @Component({
   selector: 'app-manager',
@@ -8,11 +8,29 @@ import { UpHoldDirective, UpIconButton, UpMenu } from '@up-angular-ui/core';
   styleUrl: './manager.css',
 })
 export class Manager {
-  items = [
-    { label: 'New', icon: 'pi pi-plus' },
-    { label: 'New', icon: 'pi pi-plus' },
-    { label: 'New', icon: 'pi pi-plus' },
-    { label: 'New', icon: 'pi pi-plus' },
-    { label: 'New', icon: 'pi pi-plus' },
+  settingsItems: UpMenuItem[] = [{ label: 'Settings', icon: 'pi pi-plus' }];
+
+  collectionsItems: UpMenuItem[] = [
+    { label: 'Teansfers', icon: 'pi pi-plus' },
+    { label: 'Excurtions', icon: 'pi pi-plus' },
   ];
+
+  settingsMenu = viewChild<UpMenu>('settingsMenu');
+  collectionsMenu = viewChild<UpMenu>('collectionsMenu');
+
+  onHeld(event: Event) {
+    this.toggle(event, this.collectionsMenu(), this.settingsMenu());
+  }
+
+  onClicked(event: Event) {
+    this.toggle(event, this.settingsMenu(), this.collectionsMenu());
+  }
+
+  toggle(event: Event, menu?: UpMenu, other?: UpMenu) {
+    if (menu?.isVisible()) {
+      menu.hide();
+    }
+
+    other?.toggle(event);
+  }
 }

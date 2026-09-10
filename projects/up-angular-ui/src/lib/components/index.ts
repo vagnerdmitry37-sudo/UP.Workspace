@@ -1,5 +1,6 @@
 export * from './up-info/up-info';
 export * from './up-menu/up-menu';
+export * from './up-menu/up-menu.types';
 export * from './up-login/up-login';
 export * from './up-button/up-button';
 export * from './up-icon-button/up-icon-button';

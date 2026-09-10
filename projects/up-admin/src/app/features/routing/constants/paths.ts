@@ -1,4 +1,4 @@
-export const PAGE_TITLES = {
+export const PATHS = {
   HOME: '',
   AUTH: 'auth',
   USERS: 'users',

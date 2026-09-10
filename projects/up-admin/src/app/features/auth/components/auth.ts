@@ -6,12 +6,12 @@ import { Router } from '@angular/router';
 import { FetchService } from '../../http';
 
 @Component({
-  selector: 'app-auth-page',
+  selector: 'app-auth',
   imports: [UpLogin],
-  templateUrl: './auth-page.html',
-  styleUrl: './auth-page.css',
+  templateUrl: './auth.html',
+  styleUrl: './auth.css',
 })
-export class AuthPage {
+export class Auth {
   as = inject(AuthService);
   fb = inject(FormBuilder);
   fs = inject(FetchService);

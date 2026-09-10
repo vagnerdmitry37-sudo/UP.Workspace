@@ -4,16 +4,18 @@ import { Subject, interval, switchMap, takeUntil, finalize } from 'rxjs';
 @Directive({
   selector: '[upHold]',
   host: {
-    '(pointerup)': 'endHold()',
-    '(pointerdown)': 'startHold()',
-    '(pointerleave)': 'endHold()',
-    '(pointercancel)': 'endHold()',
+    '(pointerup)': 'endHold($event)',
+    '(pointerdown)': 'startHold($event)',
+    '(pointerleave)': 'endHold($event)',
+    '(pointercancel)': 'endHold($event)',
   },
 })
 export class UpHoldDirective implements OnDestroy {
-  readonly held = output<void>();
-  readonly clicked = output<void>();
+  readonly held = output<PointerEvent>();
+  readonly clicked = output<PointerEvent>();
   readonly holding = output<number>();
+
+  private lastEvent: PointerEvent | null = null;
 
   private readonly startHold$ = new Subject<void>();
   private readonly endHold$ = new Subject<void>();
@@ -38,12 +40,12 @@ export class UpHoldDirective implements OnDestroy {
           finalize(() => {
             const elapsed = Date.now() - startedAt;
 
-            if (elapsed <= this.clickedThresholdMilliseconds) {
-              this.clicked.emit();
+            if (elapsed <= this.clickedThresholdMilliseconds && this.lastEvent) {
+              this.clicked.emit(this.lastEvent);
             }
 
-            if (elapsed >= this.heldThresholdMilliseconds) {
-              this.held.emit();
+            if (elapsed >= this.heldThresholdMilliseconds && this.lastEvent) {
+              this.held.emit(this.lastEvent);
             }
           }),
         );
@@ -51,11 +53,13 @@ export class UpHoldDirective implements OnDestroy {
     )
     .subscribe((elapsed) => this.holding.emit(elapsed));
 
-  startHold(): void {
+  startHold(event: PointerEvent): void {
+    this.lastEvent = event;
     this.startHold$.next();
   }
 
-  endHold(): void {
+  endHold(event: PointerEvent): void {
+    this.lastEvent = event;
     this.endHold$.next();
   }
 
