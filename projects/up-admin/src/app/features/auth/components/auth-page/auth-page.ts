@@ -1,17 +1,17 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { UpLogin } from '@up-angular-ui/core';
-import { AuthService } from '..';
-import { FetchService } from '../../http';
-import { NavigationService } from '../../routing';
+import { AuthService } from '../..';
+import { FetchService } from '../../../http';
+import { NavigationService } from '../../../routing';
 
 @Component({
-  selector: 'app-auth',
+  selector: 'app-auth-page',
   imports: [UpLogin],
-  templateUrl: './auth.html',
-  styleUrl: './auth.css',
+  templateUrl: './auth-page.html',
+  styleUrl: './auth-page.css',
 })
-export class Auth {
+export class AuthPage {
   as = inject(AuthService);
   fb = inject(FormBuilder);
   fs = inject(FetchService);

@@ -1,17 +1,17 @@
 import { Routes } from '@angular/router';
-import { Auth, loginGuard } from '../../auth';
-import { Home, homeGuard } from '../../home';
+import { AuthPage, loginGuard } from '../../auth';
+import { HomePage, homeGuard } from '../../home';
 import { PATHS } from '../constants/paths';
 
 export const routes: Routes = [
   {
     path: PATHS.AUTH,
-    component: Auth,
+    component: AuthPage,
     canActivate: [loginGuard],
   },
   {
     path: PATHS.HOME,
-    component: Home,
+    component: HomePage,
     canActivate: [homeGuard],
     children: [],
   },
