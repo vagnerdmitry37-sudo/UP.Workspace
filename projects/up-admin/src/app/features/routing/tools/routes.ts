@@ -13,13 +13,6 @@ export const routes: Routes = [
     path: PATHS.HOME,
     component: Home,
     canActivate: [homeGuard],
-    children: [
-      {
-        path: PATHS.USERS,
-      },
-      {
-        path: PATHS.TRANSFERS,
-      },
-    ],
+    children: [],
   },
 ];

@@ -2,8 +2,8 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { UpLogin } from '@up-angular-ui/core';
 import { AuthService } from '..';
-import { Router } from '@angular/router';
 import { FetchService } from '../../http';
+import { NavigationService } from '../../routing';
 
 @Component({
   selector: 'app-auth',
@@ -15,7 +15,7 @@ export class Auth {
   as = inject(AuthService);
   fb = inject(FormBuilder);
   fs = inject(FetchService);
-  router = inject(Router);
+  ns = inject(NavigationService);
 
   from = this.fb.nonNullable.group({
     email: ['root@mail.com', Validators.required],
@@ -25,7 +25,7 @@ export class Auth {
   submited() {
     this.fs.post('auth/login', this.from.value).subscribe(() => {
       this.as.isAuth.set(true);
-      this.router.navigate(['']);
+      this.ns.navigateToPage('HOME');
     });
   }
 
