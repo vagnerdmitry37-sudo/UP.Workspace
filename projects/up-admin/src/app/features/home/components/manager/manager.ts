@@ -10,10 +10,10 @@ import { UpHoldDirective, UpIconButton, UpMenu, UpMenuItem } from '@up-angular-u
 export class Manager {
   settingsItems: UpMenuItem[] = [{ label: 'Settings', icon: 'pi pi-plus' }];
 
-  collectionsItems: UpMenuItem[] = [
-    { label: 'Teansfers', icon: 'pi pi-plus' },
-    { label: 'Excurtions', icon: 'pi pi-plus' },
-  ];
+  // collectionsItems: UpMenuItem[] = [
+  //   { label: 'Teansfers', icon: 'pi pi-plus' },
+  //   { label: 'Excurtions', icon: 'pi pi-plus' },
+  // ];
 
   settingsMenu = viewChild<UpMenu>('settingsMenu');
   collectionsMenu = viewChild<UpMenu>('collectionsMenu');

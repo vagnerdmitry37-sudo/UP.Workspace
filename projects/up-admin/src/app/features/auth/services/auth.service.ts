@@ -1,12 +1,13 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { catchError, map, of } from 'rxjs';
 import { FetchService } from '../../http';
+import { LoginRequest, LoginResponse } from '../../../types';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private fs = inject(FetchService);
+  fs = inject(FetchService);
 
   isAuth = signal(false);
 
@@ -16,6 +17,10 @@ export class AuthService {
 
   refresh() {
     return this.fs.post('auth/refresh');
+  }
+
+  login(prpos: Partial<LoginRequest>) {
+    return this.fs.post<LoginResponse>('auth/login', prpos);
   }
 
   checkMe() {

@@ -8,8 +8,8 @@ export class FetchService {
   private http = inject(HttpClient);
   private base = 'http://localhost:5142/api/';
 
-  get(url: string) {
-    return this.http.get(`${this.base}${url}`, { withCredentials: true });
+  get<TRespose>(url: string) {
+    return this.http.get<TRespose>(`${this.base}${url}`, { withCredentials: true });
   }
 
   post<TRespose>(url: string, body?: unknown) {

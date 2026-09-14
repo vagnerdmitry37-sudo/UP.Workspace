@@ -2,8 +2,8 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { UpLogin } from '@up-angular-ui/core';
 import { AuthService } from '../..';
-import { FetchService } from '../../../http';
 import { NavigationService } from '../../../routing';
+import { AppViewService } from '../../../view';
 
 @Component({
   selector: 'app-auth-page',
@@ -14,8 +14,8 @@ import { NavigationService } from '../../../routing';
 export class AuthPage {
   as = inject(AuthService);
   fb = inject(FormBuilder);
-  fs = inject(FetchService);
   ns = inject(NavigationService);
+  aws = inject(AppViewService);
 
   from = this.fb.nonNullable.group({
     email: ['root@mail.com', Validators.required],
@@ -23,13 +23,10 @@ export class AuthPage {
   });
 
   submited() {
-    this.fs.post('auth/login', this.from.value).subscribe(() => {
+    this.as.login(this.from.value).subscribe(({ appUser }) => {
+      this.aws.appView.set(appUser.settings.view);
       this.as.isAuth.set(true);
       this.ns.navigateToPage('HOME');
     });
-  }
-
-  getUser() {
-    this.fs.get('user').subscribe();
   }
 }
