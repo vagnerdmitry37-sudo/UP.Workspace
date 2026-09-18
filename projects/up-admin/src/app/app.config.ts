@@ -4,6 +4,7 @@ import { routes } from './features/routing/tools/routes';
 import { provideUpAngularUI } from '@up-angular-ui/core';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { loadingIntercepter, provideAppErrorHandler } from './features/http';
+import { authIntercepter } from './features/auth';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -11,6 +12,6 @@ export const appConfig: ApplicationConfig = {
     provideAppErrorHandler(),
     provideUpAngularUI(),
     provideRouter(routes),
-    provideHttpClient(withInterceptors([loadingIntercepter])),
+    provideHttpClient(withInterceptors([authIntercepter, loadingIntercepter])),
   ],
 };

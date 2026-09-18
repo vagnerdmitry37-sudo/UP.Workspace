@@ -1,6 +1,4 @@
-import { ManagerView } from '../../../types';
-
-export const manager: ManagerView = {
+export const manager = {
   collection: [
     {
       label: 'Transfers',
@@ -20,7 +18,7 @@ export const manager: ManagerView = {
       label: 'Theme',
     },
     {
-      label: 'Login',
+      label: 'LoginPage',
     },
   ],
 };

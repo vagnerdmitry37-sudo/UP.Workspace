@@ -1,7 +1,12 @@
-<up-login
-  title="Up aplication"
-  [email]="from.controls.email"
-  [password]="from.controls.password"
-  [buttonDisabled]="from.invalid"
-  (submited)="submited()"
-/>
+<app-layout>
+  <body>
+    <h1>Auth</h1>
+    <button (click)="onLogout()">Logout</button>
+    <router-outlet />
+  </body>
+  <footer>
+    <app-footer>
+      <app-manager />
+    </app-footer>
+  </footer>
+</app-layout>

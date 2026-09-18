@@ -3,7 +3,7 @@ import { ErrorHandler, inject, Provider } from '@angular/core';
 import { UpInfoService } from '@up-angular-ui/core';
 
 class AppErrorHandler implements ErrorHandler {
-  uis = inject(UpInfoService);
+  private uis = inject(UpInfoService);
 
   handleError(value: unknown): void {
     if (value instanceof HttpErrorResponse) {

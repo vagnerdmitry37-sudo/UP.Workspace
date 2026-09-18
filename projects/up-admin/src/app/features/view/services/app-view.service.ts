@@ -1,9 +1,6 @@
-import { Injectable, signal } from '@angular/core';
-import { AppView } from '../../../types';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AppViewService {
-  appView = signal<AppView | null>(null);
-}
+export class AppViewService {}
